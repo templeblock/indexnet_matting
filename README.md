@@ -1,4 +1,10 @@
 # IndexNet Matting
+
+<p align="center">
+  <img src="kid.png" width="425" title="Original Image"/>
+  <img src="matte.png" width="425" title="IndexNet Matting"/>
+</p>
+
 This repository includes the official implementation of IndexNet Matting for deep image matting, presented in our paper:
 
 **[Indices Matter: Learning to Index for Deep Image Matting](https://arxiv.org/pdf/1908.00672.pdf)**
@@ -12,7 +18,10 @@ Proc. IEEE/CVF International Conference on Computer Vision (ICCV), 2019
 <sup>2</sup>Noah's Ark Lab, Huawei Technologies
 
 ## Updates
+- 4 April 2020: Training code is released!
+- 16 Aug 2019: The supplementary material is finalized and released!
 - 5 Aug 2019: Inference code of IndexNet Matting is released!
+
 
 ## Highlights
 - **Simple and effective:** IndexNet Matting only deals with the upsampling stage but exhibits at least 16.1% relative improvements, compared to the Deep Matting baseline;
@@ -68,7 +77,12 @@ Here is the results of IndexNet Matting and our reproduced results of Deep Matti
 * The evaluation code (Matlab code implemented by the Deep Image Matting's author) placed in the ``./evaluation_code`` folder is used to report the final performance for a fair comparion. We have also implemented a python version. The numerial difference is subtle.
 
 ## Training
-Training code is not applicable at present but may be released in the future.
+Run the following command to train IndexNet Matting:
+
+    sh train.sh
+    
+- `--data-dir` should be modified to your dataset directory.
+- I was able to train the model on a single GTX 1080ti (12 GB). The training takes about 5 days. The current bottleneck appears to be the dataloader.
 
 ## Citation
 If you find this work or code useful for your research, please cite:
